@@ -1,0 +1,333 @@
+#carrossel{
+    overflow: hidden;
+    --animation-delay: 2s;
+    --animation-duration: 5s;
+    --animar: var(--animation-delay) + var(--animation-duration);
+    $Images: 3, 4;
+
+    div{
+        position: relative;
+
+        div{
+            display: flex;
+            z-index: 1;
+            a{
+
+                img{
+                    width: 100vw;
+                    display: block; 
+                }
+    
+                &:first-child{
+                    animation: ImagemLeft 5s linear 2s forwards,
+                                ImagemLeft 500ms linear 22500ms reverse forwards;
+                }
+
+                &:nth-child(2){
+                    animation: ImagemLeft 4s linear 9s forwards,
+                                ImagemLeftToRight 1s linear 22300ms forwards;
+                }
+
+                &:nth-child(3){
+                    animation: ImagemLeft 4s linear 14s forwards,
+                                ImagemLeftToRight 1s linear 22s forwards;
+                }
+
+                &:last-child{
+                    animation-name: ImagemRight;
+                    animation-duration: 1s;
+                    animation-delay: 20s;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
+    
+    
+        ul{
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            top: 85%;
+    
+            li{
+                width: 15vw;
+                height: 2.5vh;
+                background-color: var(--white);
+                border-radius: 10px;
+                z-index: 100;
+    
+                a{
+                    display: block;
+                    width: 15vw;
+                    height: 2.5vh;
+                }
+
+                .progress{
+                    width: 0%;
+                    height: inherit;
+                    background-color: var(--lilas-500);
+                    border-radius: 10px;
+                    display: block;
+
+                }
+            }
+        }
+    }
+}
+
+
+.login-livia{
+    width: 80vw;
+    height: 25vh;
+    background-color: var(--white);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh auto 0;
+
+    > div{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 5vw;
+        padding: 0 10px 0 5px;
+
+            figure{
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            border: solid 0.5px #000;
+            background-color: var(--lilas-300);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            margin: auto;
+
+            img{
+                width: auto;
+                height: 6.3rem;
+            }
+
+        }
+
+        div{
+            margin: auto;
+    
+            h2{
+                font-family: var(--title-font);
+                font-size: 1.8rem;
+                padding-bottom: 1vh;
+            }
+    
+            p{
+                font-family: var(--text-font);
+                font-size: 1.3rem;
+            }
+        }
+
+    }
+
+    button{
+        width: 60vw;
+        height: 6vh;
+        text-align: center;
+        background-color: var(--lilas-300);
+        border-radius: 7px;
+        font-family: var(--title-font);
+        font-size: 1.8rem;
+        margin: 3vh auto 0;
+    }
+
+}
+
+#destaques_do_mes, #proximos-lancamentos{
+    h2{
+        font-family: var(--title-font);
+        font-size: 2rem;
+        text-align: center;
+        margin: 5rem 0 3rem;
+    }
+
+    > div{
+        display: grid;
+        grid-template-columns: 40vw 40vw;
+        gap: 1.5rem;
+        padding: 0 calc((20vw - 2rem) / 2);
+
+        div{
+            width: auto;
+            height: auto;
+            background-color: var(--white);
+            border-radius: 10px;
+
+            a{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-self: center;
+
+                img{
+                    width: auto;
+                    max-height: 30vh;
+                    margin: 2rem 20% 0;
+                } 
+
+                h3, h4{
+                    text-align: center;
+                    font-family: var(--title-font);
+                    font-size: 1.8rem;
+                    margin-top: 2rem;
+                }
+                
+                h3{
+                    color: var(--black);
+                    height: 3rem;
+                }
+
+                h4{
+                    color: var(--lilas-500);
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+
+}
+
+.lista-completa{
+    width: calc(80vw + 1.5rem);
+    height: 10vh;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem auto 0;
+
+    p{
+        font-family: var(--title-font);
+        font-size: 1.8rem;
+        padding-left: 1.5rem;
+    }
+
+    span{
+        padding-right: 2rem;
+    }
+}
+
+form{
+    width: 80vw;
+    height: auto;
+    background-color: var(--lilas-500);
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    margin-top: 5vh;
+
+    h3{
+        font-family: var(--title-font);
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
+
+    div{
+        display: flex;
+
+        input{
+            width: 62vw;
+            height: 4rem;
+            font-family: var(--title-font);
+            font-size: 1.8rem;
+            background-color: var(--white);
+            border-radius: 4px 0 0 4px;
+            padding: 0.5rem 0;
+            margin: 1rem 0 1.5rem;
+        }
+    
+        button{
+            width: 10vw;
+            height: 4rem;
+            background-color: var(--white);
+            border-radius: 0 4px 4px 0;
+            margin-top: 1rem;
+
+            span{
+                padding-top: 0.5rem;
+            }
+        }
+    }
+}
+
+.formas-de-pagamento, .institucional{
+    width: 80vw;
+    height: 20vh;
+    margin: 0 10vw;
+
+    h3{
+        font-family: var(--title-font);
+        font-size: 1.8rem;
+        text-align: center;
+        margin: 5vh 0 1.5rem;
+    }
+
+    .cartoes{
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+
+        img{
+            width: 6rem;
+            height: auto;
+            margin: 1rem 1rem 0;
+        }
+    }
+
+    ul li {
+        margin-top: 1rem;
+        a{
+            font-family: var(--title-font);
+            font-size: 1.8rem;
+            text-decoration: underline;
+            color: var(--black);
+        }
+    }
+
+}
+
+footer{
+    width: 100vw;
+    height: auto;
+    background-color: var(--lilas-500);
+    margin-top: 5vh;
+
+    h1{
+        font-family: var(--title-font);
+        font-size: 3rem;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    small{
+        display: flex;
+        justify-content: center;
+
+        span{
+            font-family: var(--title-font);
+            color: var(--black);
+
+            &:first-child{
+                font-size: 1rem;
+            }
+
+            &:last-child{
+                padding-bottom: 1rem;
+            }
+        }
+    }
+}
